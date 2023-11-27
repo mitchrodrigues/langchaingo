@@ -36,6 +36,8 @@ type Client struct {
 	// required when APIType is APITypeAzure or APITypeAzureAD
 	apiVersion      string
 	embeddingsModel string
+
+	responseMode string
 }
 
 // Option is an option for the OpenAI client.

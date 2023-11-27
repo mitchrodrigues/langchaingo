@@ -62,6 +62,7 @@ func (o *LLM) Generate(ctx context.Context, prompts []string, options ...llms.Ca
 			PresencePenalty:  opts.PresencePenalty,
 			TopP:             opts.TopP,
 			StreamingFunc:    opts.StreamingFunc,
+			ResponseMode:     opts.ResponseMode,
 		})
 		if err != nil {
 			return nil, err

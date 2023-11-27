@@ -19,6 +19,8 @@ type CompletionRequest struct {
 	// StreamingFunc is a function to be called for each chunk of a streaming response.
 	// Return an error to stop streaming early.
 	StreamingFunc func(ctx context.Context, chunk []byte) error `json:"-"`
+
+	ResponseMode string `json:"response_mode,omitempty"`
 }
 
 type CompletionResponse struct {
@@ -85,5 +87,6 @@ func (c *Client) createCompletion(ctx context.Context, payload *CompletionReques
 		FrequencyPenalty: payload.FrequencyPenalty,
 		PresencePenalty:  payload.PresencePenalty,
 		StreamingFunc:    payload.StreamingFunc,
+		ResponseMode:     payload.ResponseMode,
 	})
 }

@@ -40,6 +40,8 @@ type ChatRequest struct {
 	// StreamingFunc is a function to be called for each chunk of a streaming response.
 	// Return an error to stop streaming early.
 	StreamingFunc func(ctx context.Context, chunk []byte) error `json:"-"`
+
+	ResponseMode string `json:"response_mode,omitempty"`
 }
 
 // ChatMessage is a message in a chat request.
